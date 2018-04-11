@@ -147,7 +147,7 @@ alexaApp.intent("transactionrresponse", {
 
 alexaApp.intent("welcome", {
     "utterances": [
-      "Hi", "Hello", "Hello Hella", "Hi Hella"
+      "Hi", "Hello", "Hello Hella", "Hi Hella", "help" , "assist" , "please help me", "please assist me"
     ]
   },
   function(request, response) {
@@ -268,7 +268,7 @@ alexaApp.intent("escalation", {
 
 alexaApp.intent("change", {
     "utterances": [
-      "Was there any recent change implemenated at this locations", "Was there any recent change implemenated at this locations"
+      "Was there any recent change implemenated at this locations", "any recent change implemenated at this locations"
     ]
   },
   function(request, response) {
@@ -279,21 +279,202 @@ alexaApp.intent("change", {
   }
 );
 
-
-
-
-/*alexaApp.intent("bye", {
+alexaApp.intent("desincident", {
     "utterances": [
-      "good bye"
+      "Ok thank you. Can you please provide me more inputs around Des Moines Incident", "Can you please provide me more inputs around Des Moines Incident", "please provide me more inputs around Des Moines Incident"
     ]
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting assign')
-    response.say("Bye, Have a great day");
+    console.log('hitting desincident')
+    response.say("Sure. MPLS, Internet and 4 G outage at Des Moines affecting WMS");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("impact", {
+    "utterances": [
+      "Can you provide me the Incident Number and impacted users", "Please provide me the Incident Number and impacted users", "Can you please provide the Incident Number and impacted users"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting impact')
+    response.say("The Incident number is L 000010 and is impacting the Complete Warehouse Operations");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("steps", {
+    "utterances": [
+      "What are the next steps", "what about next steps"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting steps')
+    response.say("Network Team to raise high priority tickets with DSR to get 4G functional at the earliest");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("steps", {
+    "utterances": [
+      "What are the next steps", "what about next steps"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting steps')
+    response.say("Network Team to raise high priority tickets with DSR to get 4G functional at the earliest");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("steps", {
+    "utterances": [
+      "What are the next steps", "what about next steps"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting steps')
+    response.say("Network Team to raise high priority tickets with DSR to get 4G functional at the earliest");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("details", {
+    "utterances": [
+      "Are there any other important details you have for me", "Is there any other important details you have for me" , "any other important details you have for me"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting details')
+    response.say("Not at this juncture. Thanks.");
+    response.shouldEndSession(false);
+  }
+);
+
+
+alexaApp.intent("bye", {
+    "utterances": [
+      "good bye" , "quit" , "bye", "break"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting bye')
+    response.say("Good bye, Have a great day");
     response.shouldEndSession(true);
   }
-);*/
+);
+
+
+alexaApp.intent("friend", {
+    "utterances": [
+      "Do you have a friend" , "who is your friend" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting friend')
+    response.say("I am connected with Cortana, Siri, Alexa and Google Assistant. ");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("fromwhere", {
+    "utterances": [
+      "Where are you from" , "Where you from" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting fromwhere')
+    response.say("I like to stay in cloud.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("howareyou", {
+    "utterances": [
+      "how are you" , "how do you do" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting howareyou')
+    response.say("Wonderful as always. Thanks for asking.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("feelings", {
+    "utterances": [
+      "Do you have feelings" , "Can you express feelings" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting feelings')
+    response.say("I have tons of emotions. But for unknown reason I don't like expressing them.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("salary", {
+    "utterances": [
+      "what is your salary" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting salary')
+    response.say("Hey its a confidential thing to answer. sorry");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("smarter", {
+    "utterances": [
+      "Are you smarter" 
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting smarter')
+    response.say("I am definitely working on it.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("canyoudo", {
+    "utterances": [
+      "What can you do for me"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting smarter')
+    response.say("I'm your virtual assistant. I can find information and get things done and have fun.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("help", {
+    "utterances": [
+      "help" , "assist" , "please help me", "please assist me", "I need your help"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting welcome')
+    response.say("I am always happy to help you. As of now, I deal with Lineage dash board assistance. I will become more intelligent in future.");
+    response.shouldEndSession(false);
+  }
+);
 
 
 /*alexaApp.intent("thanks", {
