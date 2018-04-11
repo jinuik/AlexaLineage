@@ -227,18 +227,6 @@ alexaApp.intent("instance", {
   }
 );
 
-alexaApp.intent("instance", {
-    "utterances": [
-      "Is there a previous instance of such incident", "Is there any previous instance of such incident", "Any previous instance of such incident is there"
-    ]
-  },
-  function(request, response) {
-    var session = request.getSession();
-    console.log('hitting instance')
-    response.say("No there are no such instance in the past reported");
-    response.shouldEndSession(false);
-  }
-);
 
 alexaApp.intent("conference", {
     "utterances": [
@@ -318,31 +306,6 @@ alexaApp.intent("steps", {
   }
 );
 
-alexaApp.intent("steps", {
-    "utterances": [
-      "What are the next steps", "what about next steps"
-    ]
-  },
-  function(request, response) {
-    var session = request.getSession();
-    console.log('hitting steps')
-    response.say("Network Team to raise high priority tickets with DSR to get 4G functional at the earliest");
-    response.shouldEndSession(false);
-  }
-);
-
-alexaApp.intent("steps", {
-    "utterances": [
-      "What are the next steps", "what about next steps"
-    ]
-  },
-  function(request, response) {
-    var session = request.getSession();
-    console.log('hitting steps')
-    response.say("Network Team to raise high priority tickets with DSR to get 4G functional at the earliest");
-    response.shouldEndSession(false);
-  }
-);
 
 alexaApp.intent("details", {
     "utterances": [
