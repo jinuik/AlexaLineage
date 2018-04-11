@@ -164,34 +164,34 @@ alexaApp.intent("welcome", {
 );
 
 
-alexaApp.intent("dashboard", {
+alexaApp.intent("order", {
     "utterances": [
-      "How does the Pitch dashboard look today", "How good is Pitch dashboard today", "how is the Pitch dashboard looking today"
+      "what are the number of pipeline orders we have", "how many pipeline orders we have", "give the number of pipeline orders we have"
     ]
   },
   function(request, response) {
     var session = request.getSession();
     console.log('hitting order')
-    response.say("Hello, The Pitch dashboard looks healthy but for 2 Incidents at Kansa City and Des Monies locations.");
+    response.say("Stephen, the number of pipeline orders are 200");
     response.shouldEndSession(false);
   }
 );
 
 
-alexaApp.intent("incident", {
+alexaApp.intent("current", {
     "utterances": [
-      "Can you please provide me more details around Kansas City Incident", "please provide me more details around Kansas City Incident", "please provide with more details about Kansas City Incident"
+      "what are the number of current orders due for today", "tell me the number of current orders due for today", "any current orders due for today"
     ]
   },
   function(request, response) {
     var session = request.getSession();
     console.log('hitting pending')
-    response.say("There is an ongoing incident since impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4 G outage.");
+    response.say("The number of current orders due for today are 50");
     response.shouldEndSession(false);
   }
 );
 
-/*alexaApp.intent("future", {
+alexaApp.intent("future", {
     "utterances": [
       "what are the future orders that are due", "which are future orders that are due", "any future orders that are due"
     ]
@@ -241,9 +241,7 @@ alexaApp.intent("bye", {
     response.say("Bye, Have a great day");
     response.shouldEndSession(true);
   }
-);*/
-
-
+);
 /*alexaApp.intent("thanks", {
     "utterances": [
       "thanks for the help", "thank you very much", "thanks a lot"
@@ -285,7 +283,10 @@ alexaApp.intent("defaultintent", {
     
     response.say("Hey! Sorrry, I am not sure");
     
-
+    apiCall(request, response);
+            setTimeout(function () {
+            response.say("inside default intent");
+        }, 4000);
     var session = request.getSession();
     console.log('hitting default')
    // response.say("Sorrry, I am not sure");
@@ -312,7 +313,22 @@ var socketFunction = function(commandname) {
 
 
 
-
+function apiCall(req, res) {
+    var a = "hI";
+    var request = appi.textRequest(a, {
+        sessionId: '1234567891'
+    });
+    request.on('response', function (response) {
+        var a = response;
+        res.say(a["result"]["fulfillment"]["speech"]);
+       // res.("i am inside dialog flow");
+    });
+    request.on('error', function (error) {
+        console.log(error);
+    });
+    request.end();
+    return(a["result"]["fulfillment"]["speech"]);
+}
 
 server.listen(PORT);
 console.log("Listening on port " + PORT + ", try http://localhost:" + PORT + "/test");
