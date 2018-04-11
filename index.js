@@ -186,7 +186,8 @@ alexaApp.intent("incident", {
   function(request, response) {
     var session = request.getSession();
     console.log('hitting pending')
-    response.say("There is an ongoing incident since impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4 G outage.");
+   // response.say("There is an ongoing incident since impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4 G outage.");
+    response.say("There is an ongoing incident since 4/19/2017 2:22:15 PM impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4G outage.");
     response.shouldEndSession(false);
   }
 );
