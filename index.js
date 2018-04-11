@@ -39,11 +39,6 @@ alexaApp.express({
 // from here on you can setup any other express routes or middlewares as normal
 app.set("view engine", "ejs");
 
-/*alexaApp.launch(function(request, response) {
-  request.getSession();
-  response.say("Welcome to Brillio Imagine IZone. I am Brillio AI Bot on Echo Dot");
-  response.shouldEndSession(false);
-});*/
 
 
 alexaApp.launch(function(request, response) {
@@ -227,51 +222,67 @@ alexaApp.intent("instance", {
   function(request, response) {
     var session = request.getSession();
     console.log('hitting instance')
-    response.say("Chethan Krishna is the Incident Manger");
+    response.say("No there are no such instance in the past reported");
     response.shouldEndSession(false);
   }
 );
 
-/*alexaApp.intent("future", {
+alexaApp.intent("instance", {
     "utterances": [
-      "what are the future orders that are due", "which are future orders that are due", "any future orders that are due"
+      "Is there a previous instance of such incident", "Is there any previous instance of such incident", "Any previous instance of such incident is there"
     ]
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting backlogs')
-    response.say("The future orders that are due within the next 3 days are 12");
+    console.log('hitting instance')
+    response.say("No there are no such instance in the past reported");
     response.shouldEndSession(false);
   }
 );
 
-alexaApp.intent("past", {
+alexaApp.intent("conference", {
     "utterances": [
-      "which are the past orders that are due as of today", "any past orders that are due as of today", "any past orders due as of today"
+      "Is the conference Bridge Still Open", "Is conference Bridge Still Open"
     ]
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting critical')
-    response.say("The orders that were due before today are 18");
+    console.log('hitting conference')
+    response.say("Yes the bridge is still running at 1 213 296 6290");
     response.shouldEndSession(false);
   }
 );
 
-alexaApp.intent("key", {
+alexaApp.intent("escalation", {
     "utterances": [
-      "what are the key metrics for the NoC in this month", "any key metrics for the NoC in this month", "tell if any key metrics for the NoC in this month"
+      "Does this need to be escalated", "Does it need to be escalated"
     ]
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting assign')
-    response.say("The average time spent on an order is around 42 min and productivity of the plant is at 60 orders per day which is better than the previous month by 12%.");
+    console.log('hitting escalation')
+    response.say("No the team is working towards resolving this and is Expected resolution time is 4:22:15 PM");
     response.shouldEndSession(false);
   }
 );
 
-alexaApp.intent("bye", {
+alexaApp.intent("change", {
+    "utterances": [
+      "Was there any recent change implemenated at this locations", "Was there any recent change implemenated at this locations"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting change')
+    response.say("There are no details available around changes implemented at this locations for last 6 months.");
+    response.shouldEndSession(false);
+  }
+);
+
+
+
+
+/*alexaApp.intent("bye", {
     "utterances": [
       "good bye"
     ]
@@ -300,18 +311,7 @@ alexaApp.intent("bye", {
 
 
     
-/*alexaApp.intent("recomment", {
-    "utterances": [
-      "Yes Please tell", "Ok thats great", "please help me", "Ok Please tell"
-    ]
-  },
-  function(request, response) {
-    var session = request.getSession();
-    console.log('hitting recomment')
-    response.say("Shall I will give you a good recipe to surprise.");
-    response.shouldEndSession(false);
-  }
-);*/
+
 
 
 
