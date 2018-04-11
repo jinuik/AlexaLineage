@@ -171,7 +171,7 @@ alexaApp.intent("dashboard", {
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting order')
+    console.log('hitting dashboard')
     response.say("Hello, The Pitch dashboard looks healthy but for 2 Incidents at Kansa City and Des Monies locations.");
     response.shouldEndSession(false);
   }
@@ -185,9 +185,49 @@ alexaApp.intent("incident", {
   },
   function(request, response) {
     var session = request.getSession();
-    console.log('hitting pending')
+    console.log('hitting incident')
    // response.say("There is an ongoing incident since impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4 G outage.");
     response.say("There is an ongoing incident since 4/19/2017 2:22:15 PM impacting All Warehouse knowledge workers within Kansas City due to MPLS, Internet and 4G outage.");
+    response.shouldEndSession(false);
+  }
+);
+
+
+alexaApp.intent("manager", {
+    "utterances": [
+      "Who is the Incident Manager for this Kansas City Incident", "Who is the Incident Manager for this Kansas City", "Who is the Incident Manager for this"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting manager')
+    response.say("Chethan Krishna is the Incident Manger");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("update", {
+    "utterances": [
+      "what is the latest update", "what about the latest update", "latest update"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting update')
+    response.say("MPLS and Internet outage is going on at the site. Both Service Provider devices are down due to an area wide outage. 4G is not operational and a high priority case has been raised with DSR DC Ops team were unable to access any managed server. Network team was asked to check the status from their end. The team has raised P 1 ticket with Service Providers.");
+    response.shouldEndSession(false);
+  }
+);
+
+alexaApp.intent("instance", {
+    "utterances": [
+      "Is there a previous instance of such incident", "Is there any previous instance of such incident", "Any previous instance of such incident is there"
+    ]
+  },
+  function(request, response) {
+    var session = request.getSession();
+    console.log('hitting instance')
+    response.say("Chethan Krishna is the Incident Manger");
     response.shouldEndSession(false);
   }
 );
