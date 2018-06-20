@@ -43,7 +43,7 @@ app.set("view engine", "ejs");
 
 alexaApp.launch(function(request, response) {
   request.getSession().set();
-  response.say("Welcome to Lineage Demo. I am Hella, a Brillio AI Bot on Alexa Echo Dot.");
+  response.say("Welcome to the dashboard summarization demo. I am Hella, a Brillio AI Bot on Alexa Echo Dot.");
   response.shouldEndSession(false);
 });
 
@@ -434,7 +434,7 @@ alexaApp.intent("help", {
   function(request, response) {
     var session = request.getSession();
     console.log('hitting welcome')
-    response.say("I am always happy to help you. As of now, I deal with Lineage dash board assistance. I will become more intelligent in future.");
+    response.say("I am always happy to help you. As of now, I deal with dash board assistance. I will become more intelligent in future.");
     response.shouldEndSession(false);
   }
 );
